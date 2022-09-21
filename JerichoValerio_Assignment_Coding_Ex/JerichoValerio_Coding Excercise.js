@@ -16,6 +16,16 @@
 </script>
 
 // 2. Using a function for loop print all even numbers up to n (parameter in function);
+<script>
+    
+    console.log('Even numbers are ');
+
+for (var i = 2 ; i < 12 ; i += 2 ) {
+    console.log(i);
+}
+
+</script>
+
 // 3. Write a function take a string as a parameter, Check if a string contains the letter “y”. If yes print "YES" and only one time.
 // For example - "Crayzy" "Yes"
 
