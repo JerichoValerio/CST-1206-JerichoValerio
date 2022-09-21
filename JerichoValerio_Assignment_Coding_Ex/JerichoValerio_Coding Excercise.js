@@ -1,4 +1,20 @@
 // 1. Write a function to find the sum of the elements inside the array
+<script>
+    // Creating array
+    var arr = [4, 8, 7, 13, 12]
+  
+    // Creating variable to store the sum
+    var sum = 0;
+  
+    // Running the for loop
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    // Prints: 44
+    document.write("Sum is " + sum)
+</script>
+
 // 2. Using a function for loop print all even numbers up to n (parameter in function);
 // 3. Write a function take a string as a parameter, Check if a string contains the letter “y”. If yes print "YES" and only one time.
 // For example - "Crayzy" "Yes"
