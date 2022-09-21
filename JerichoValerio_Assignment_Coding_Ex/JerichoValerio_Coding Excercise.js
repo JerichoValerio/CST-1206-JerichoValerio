@@ -1,4 +1,5 @@
 // 1. Write a function to find the sum of the elements inside the array
+
 <script>
     // Creating array
     var arr = [4, 8, 7, 13, 12]
@@ -15,21 +16,52 @@
     document.write("Sum is " + sum)
 </script>
 
+
 // 2. Using a function for loop print all even numbers up to n (parameter in function);
-<script>
-    
+
+<script>   
     console.log('Even numbers are ');
 
 for (var i = 2 ; i < 12 ; i += 2 ) {
     console.log(i);
 }
-
 </script>
+
 
 // 3. Write a function take a string as a parameter, Check if a string contains the letter “y”. If yes print "YES" and only one time.
 // For example - "Crayzy" "Yes"
 
+<script>
+var inputString = "crazy";
+var findme = "y";
+
+if ( inputString.indexOf(findme) > -1 ) {
+    alert( "YES" );
+} else {
+    alert( "NO" );
+}
+</script>
+
+
 // 4. Write a function to find the factorial of a given number n
+
+<script>
+function factorial(n){
+  let answer = 1;
+  if (n == 0 || n == 1){
+    return answer;
+  }else{
+    for(var i = n; i >= 1; i--){
+      answer = answer * i;
+    }
+    return answer;
+  }  
+}
+let n = 6;
+answer = factorial(n)
+console.log("The factorial of " + n + " is " + answer);
+</script>
+
 
 // 5. // Write a function which accepts 4 parameters (different scores of a student for subjects), and
 // then calculate the average of all the score.
