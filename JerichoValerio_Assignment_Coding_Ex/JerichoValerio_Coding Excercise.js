@@ -71,6 +71,52 @@ console.log("The factorial of " + n + " is " + answer);
 // If the average is between 50-70, then console grade C
 // Other wise console grade F
 
+<script>
+
+// Arrange the data in a suitable format
+const student1 = [70.5, 88.0, 91.0, 85.5, 66.5];
+const student2 = [90.5, 92.5, 90.0, 95.0, 87.5];
+const student3 = [75.5, 75.0, 77.0, 75.5, 81.5];
+const student4 = [55.5, 68.0, 71.5, 85.0, 66.0];
+const student5 = [70.5, 88.0, 91.0, 85.5, 66.5];
+const student6 = [80.5, 87.0, 57.0, 75.5, 64.0];
+
+// Create multidimensional array of all student results
+const allResults = [];
+allResults.push(student1, student2, student3, student4, student5, student6);
+
+let studentNumber = 0;  
+let studentLess60Message = "";
+
+// Loop through each student
+for (let studentResultsArray of allResults) 
+{
+    // Keep track of score total for each student
+    let sum = 0;
+
+    // Increment studentNumber to keep track of student
+    studentNumber += 1;
+
+    // Loop through each student result
+    for (let result of studentResultsArray) 
+    {
+        sum += result;
+
+        // Check to see if student has scored less than 60
+        if (result < 60) 
+        {
+            studentLess60Message += "Student " + studentNumber + " has gotten a score of less than 60% => " + result + "\n\n";
+        }
+    } // END loop
+
+    // Calculate average score of student
+    let avg = sum/studentResultsArray.length;
+
+    console.log("Student " + studentNumber + " average = " + avg.toFixed(2));
+} // END loop
+
+</script>
+
 // 6. Write a function which prints the star pattern like that for the given value n
 
 // *
