@@ -56,10 +56,11 @@ function factorial(n){
     }
     return answer;
   }  
-}
+
 let n = 6;
 answer = factorial(n)
 console.log("The factorial of " + n + " is " + answer);
+}
 </script>
 
 
@@ -80,6 +81,19 @@ console.log("The factorial of " + n + " is " + answer);
 // ******
 // *******
 
+
+console.log
+("*
+ **
+ ***
+ ****
+ *****
+ ******
+ *******");
+  
+
+
+
 // 7.
 
 // *
@@ -96,4 +110,24 @@ console.log("The factorial of " + n + " is " + answer);
 // **
 // *
 
+
+console.log
+(" 
+ *
+ **
+ ***
+ ****
+ *****
+ ******
+ *******
+ ******
+ *****
+ ****
+ ***
+ **
+ *");
+
+
 // 8. Write a function to reverse a string
+
+
