@@ -65,7 +65,7 @@ html, body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #1c87c9;
+    background: #BC212E;
     }
     label.radio:after {
     content: "";
@@ -100,7 +100,7 @@ html, body {
     display: inline-block;
     padding: 9.3px 15px;
     box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-    background: #1c87c9;
+    background: #ffb7c5;
     color: #fff;
     text-align: center;
     }
@@ -114,11 +114,11 @@ html, body {
     margin: 10px auto;
     border-radius: 5px; 
     border: none;
-    background: #1c87c9; 
+    background: #351E1C ; 
     font-size: 14px;
     font-weight: 600;
     color: #fff;
     }
     button:hover {
-    background: #26a9e0;
+    background: #FF4E20;
     }
