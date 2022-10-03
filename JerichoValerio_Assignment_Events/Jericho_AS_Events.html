@@ -1,23 +1,50 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="Jericho_AS_Events.js"></script>
+    <link rel="stylesheet" href="Jericho_AS_Events.css">
 </head>
 
 <!-- https://dribbble.com/tags/form  -->
 <!-- Take reference -->
-<body>
-    <form action="" onsubmit="submitForm()">
-        <!-- <button type="submit" onclick=""></button> -->
-        <button></button>
+
+<div class="main-block">
+    <h1>Registration</h1>
+    <form action="/">
+        <hr>
+        <div class="account-type">
+            <input type="radio" value="none" id="radioOne" name="account" checked />
+            <label for="radioOne" class="radio">Watcher</label>
+            <input type="radio" value="none" id="radioTwo" name="account" />
+            <label for="radioTwo" class="radio">Player</label>
+        </div>
+        <hr>
+        <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
+        <input type="text" name="name" id="name" placeholder="Email" required />
+        <label id="icon" for="name"><i class="fas fa-user"></i></label>
+        <input type="text" name="name" id="name" placeholder="Name" required />
+        <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
+        <input type="password" name="name" id="name" placeholder="Password" required />
+        <hr>
+        <div class="gender">
+            <input type="radio" value="none" id="male" name="gender" checked />
+            <label for="male" class="radio">Male</label>
+            <input type="radio" value="none" id="female" name="gender" />
+            <label for="female" class="radio">Female</label>
+        </div>
+        <hr>
+        <div class="btn-block">
+            <button onclick="testVariable()">Submit</button> <br />
+            <span id="spanResult">
+
+            </span>
+        </div>
     </form>
-
-    <table>
-
-    </table>
+</div>
 </body>
+
 </html>
