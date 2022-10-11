@@ -1,35 +1,32 @@
-
-
 function sum(a, b) {
-    return a + b;
+  return a + b;
 }
 
-// can be written inn arrow func as below
+// The above example can be written in arrow function as below
 
-const sum2 = (a,b) => {
-    return a + b;
-}
+const sum2 = (a, b) => {
+  return a + b;
+};
 
-// the above example can be written in function in single line
+// The above example can be written in arrow function in single line
 
-const sum3 = (a,b) => return a = b;
+const sum3 = (a, b) => a + b;
 
-//********************
+// *******************************************************************
 
-*/
+// Function Expresion
 
-//string literals
+const sum4 = function (a, b) {
+  return a + b;
+};
 
-let myName = "dan";
+// String Literals
+
+let myName = "Daniel";
 let myCollege = "VCC";
 
-console.log("hi my name is " + myName + "i go to " + myCollege);
+console.log("Hi my name is " + myName + " and I study in " + myCollege);
 
+//  We can write the above as using string literals
 
-
-
-// function experssions 
-
-const sum4 = function (a,b) {
-    a + b; 
-}
+console.log(`Hi my name is ${myName} and I study in ${myCollege}`);
