@@ -2,60 +2,84 @@
 
 //this keyword refers to the current object that's ----> name
 
-var name = 'Daniel'
+var name = "Daniel";
 
 let obj = {
-  name: 'Jericho',
+  name: "Jericho",
   getName: () => {
-    console.log(this.name)
-  }
-}
+    console.log(this.name);
+  },
+};
 
-obj.getName()
+obj.getName();
 
 // main difference on this keyword
 
 let obj2 = {
-  name: 'Jericho',
+  name: "Jericho",
   getName: () => {
-    console.log(this.name)
-  }
-}
+    console.log(this.name);
+  },
+};
 
-obj2.getName()
+obj2.getName();
 
-var game = 'cod'
+var game = "cod";
 let obj2 = {
-  game: 'val',
+  game: "val",
   getGame: () => {
-    console.log(this.game)
-  }
-}
+    console.log(this.game);
+  },
+};
 
-obj2.getGame()
+obj2.getGame();
 
-
-var city = {
-
-}
+var city = {};
 let student2 = {
   name: "dan",
-  college: 'vcc',
+  college: "vcc",
   city: "Tronto",
   addy: {
-    city: 'van',
-    province: 'bc',
+    city: "van",
+    province: "bc",
     getCity: function () {
-      console.log(this.city)
-    }
-  }
-}
-student.addy.getCity(); 
+      console.log(this.city);
+    },
+  },
+};
+student.addy.getCity();
 
-
-
-// hositing 
+// hositing
 console.log(collegeName); //undefined
 
 var collegeName = "VCC";
 
+//_____ The above representtation will  be written bhy parser as below and thats why
+// it is undefined
+
+var collegeName;
+
+console.log(collegeName); //undefined
+
+collegeName = "VCC";
+
+//hoisting in fenc keyword
+
+getMyName();
+
+function getMyName() {
+  console.log("hey im jer");
+}
+
+//-------------------------
+
+function getMyName() {
+  console.log("hey im jer");
+}
+
+getMyName();
+
+console.log(country); //ref error
+let country = "canada";
+
+//
