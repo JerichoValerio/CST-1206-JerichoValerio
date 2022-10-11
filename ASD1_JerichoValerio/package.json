@@ -1,0 +1,11 @@
+{
+  "name": "asd1_jerichovalerio",
+  "version": "1.0.0",
+  "description": "kms",
+  "main": "ASD1_Jericho.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jericho",
+  "license": "ISC"
+}
