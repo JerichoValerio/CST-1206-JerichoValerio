@@ -129,6 +129,16 @@ console.log(studentsWithHighestMarks)
 //   Function missingNumber(array, n) {
 //   }
 
+const arr = [3, 7, 8, 10, 11, 0, 2, 6, 1, 4, 5]
+const findMissing = (arr = []) => {
+  const sum = arr.reduce((acc, val) => acc + val)
+  const { length: num } = arr
+  const correctSum = (num * (num + 1)) / 2
+  return (diff = correctSum - sum)
+  return diff
+}
+console.log(findMissing(arr))
+
 //************************************************************************************************
 //   Question 3
 //   Write a Express server where you will keep records of Employees
