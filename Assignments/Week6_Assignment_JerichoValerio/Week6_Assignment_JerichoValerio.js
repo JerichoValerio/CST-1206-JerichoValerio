@@ -28,41 +28,94 @@
 //   Your function should look like
 //   function studentWithHighestMarks(array) {
 //   }
-let students = [
+
+const highestMarks = []
+const studentsWithHighestMarks = []
+
+const students = [
   {
-    name: 'Sham',
-    sub: {
-      math: 95,
-      eng: 90,
-      science: 99
-    }
+    name: 'Daniel',
+    email: 'daniel@gmail.com',
+    subject: [
+      { maths: 80 },
+      { english: 60 },
+      { science: 50 },
+      { sports: 70 },
+      { science: 95 }
+    ]
   },
   {
-    name: 'Peter',
-    sub: {
-      math: 80,
-      eng: 70,
-      science: 60
-    }
+    name: 'Mark',
+    email: 'mark@gmail.com',
+    subject: [
+      { maths: 99 },
+      { english: 40 },
+      { science: 84 },
+      { sports: 72 },
+      { science: 60 }
+    ]
   },
   {
-    name: 'Bob',
-    sub: {
-      math: 70,
-      eng: 75,
-      science: 95
-    }
+    name: 'Stacy',
+    email: 'stacy@gmail.com',
+    subject: [
+      { maths: 8 },
+      { english: 30 },
+      { science: 11 },
+      { sports: 0 },
+      { science: 20 }
+    ]
+  },
+  {
+    name: 'Geri',
+    email: 'geri@gmail.com',
+    subject: [
+      { maths: 100 },
+      { english: 99 },
+      { science: 95 },
+      { sports: 85 },
+      { science: 99 }
+    ]
   }
 ]
 
-let result = []
-
 students.forEach(student => {
-  result.push({
-    name: student.name,
-    marks: Object.values(student.sub).reduce((a, b) => a + b)
+  student.subject.forEach(subject => {
+    for (let key in subject) {
+      var index = highestMarks.findIndex(obj => {
+        return obj.subject === key
+      })
+
+      if (index === -1) {
+        highestMarks.push({
+          subject: key,
+          marks: subject[key],
+          students: [student.name]
+        })
+      } else if (highestMarks[index].marks < subject[key]) {
+        highestMarks[index].marks = subject[key]
+        highestMarks[index].students = [student.name]
+      } else if (highestMarks[index].marks == subject[key]) {
+        highestMarks[index].marks = subject[key]
+        highestMarks[index].students.push(student.name)
+      }
+    }
   })
 })
+
+students.forEach(student => {
+  let count = 0
+  highestMarks.forEach(item => {
+    if (item.students.includes(student.name)) {
+      count++
+    }
+  })
+  if (count >= 2) {
+    studentsWithHighestMarks.push(student.name)
+  }
+})
+
+console.log(studentsWithHighestMarks)
 
 //************************************************************************************************
 //   Question 2
