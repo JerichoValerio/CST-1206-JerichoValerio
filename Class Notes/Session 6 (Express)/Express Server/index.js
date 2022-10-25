@@ -25,7 +25,7 @@ app.post('/students', (req, res) => {
   const studentData = req.body
   student.push(studentData)
 
-  // 201 is used when you are trying to create a resource and send sucess response
+  // 201 is used when you are trying to create a resource and send success response
   return res.status(201).json(student)
 })
 
