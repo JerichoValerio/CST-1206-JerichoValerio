@@ -29,6 +29,14 @@ app.post('/students', (req, res) => {
   return res.status(201).json(student)
 })
 
+app.post('/students', (request, response) => {
+  const studentData = request.body
+  student.push(studentData)
+
+  return response.status(201).json(student)
+})
+
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
