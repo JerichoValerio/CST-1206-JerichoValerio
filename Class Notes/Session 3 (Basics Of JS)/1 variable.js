@@ -9,8 +9,9 @@ function sum() {
   // var b; // Declaration
   a = 10;
   
-  console.log(c); // Referential error
   let  c = 10;
+  console.log(c); // Referential error
+
 
   console.log(b, "Value of b");
 
