@@ -10,14 +10,14 @@ const PORT = 5000;
 
 let articles = [
     {
-        id: 1,
+        id: Math.random(),
         title: "Latest Technologies",
         author: "Richie",
         timeRequired: "2 minutes",
         description: "This is an article for latest technologies for example - BlockChain, IOT"
     },
     {
-        id: 2,
+        id: Math.random(),
         title: "Life in Vancouver",
         author: "Richie",
         timeRequired: "1 minutes",
