@@ -7,14 +7,14 @@ function greet (fn) {
 }
 
 function myName () {
-  console.log('Hello prabh')
+  console.log('Hello Richie')
 }
 
-greet(myName) // Hello Prabh
+greet(myName) // Hello Richie
 
-// // For Each Looop
+// // For Each Loop
 
-let array = ['P', 'R', 'A', 'B', 'H']
+let array = ['R', 'I', 'C', 'H', 'I', 'E']
 
 // Here Item ---> Array[i], and index ---> i
 
@@ -45,7 +45,7 @@ let newArray = numArray.map(function (item, index) {
   return item * 2
 })
 
-console.log(numArray, 'ORIGNAL ARRAY')
+console.log(numArray, 'ORIGINAL ARRAY')
 console.log(newArray, 'NEW ARRAY')
 
 // NOTE - WHEN YOU ARE USING THE MAP FUNCTION, The length of the array remains the same
@@ -96,7 +96,7 @@ let new2Array = num2array.filter(num => {
   }
 })
 
-console.log(num2array, 'ORIGNAL ARRAY')
+console.log(num2array, 'ORIGINAL ARRAY')
 console.log(new2Array, 'NEW ARRAY')
 
 let passedStudents = modifiedArray.filter(function (student) {
@@ -168,7 +168,7 @@ let obj = {
 
 for (let key in obj) {
   console.log(obj[key])
-  // console.log(obj.key) We cannot do this since we are searching for "Key" and that doens't exist inside the obejct
+  // console.log(obj.key) We cannot do this since we are searching for "Key" and that doesn't exist inside the object
 }
 
 // **************************************
@@ -195,7 +195,7 @@ console.log(foundValue2, 'FOUND VALUE')
 const articles = [
   {
     id: Math.random().toFixed(2),
-    title: 'Latest Technogies',
+    title: 'Latest Technologies',
     author: 'Prabh',
     timeRequired: '2 minutes',
     description:

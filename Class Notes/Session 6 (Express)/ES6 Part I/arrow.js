@@ -14,7 +14,7 @@ const sum3 = (a, b) => a + b
 
 // *******************************************************************
 
-// Function Expresion
+// Function Expression
 
 const sum4 = function (a, b) {
   return a + b
@@ -22,7 +22,7 @@ const sum4 = function (a, b) {
 
 // String Literals
 
-let myName = 'Daniel'
+let myName = 'Daniel' 
 let myCollege = 'VCC'
 
 console.log('Hi my name is ' + myName + ' and I study in ' + myCollege)
