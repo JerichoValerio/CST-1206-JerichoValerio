@@ -17,7 +17,7 @@ const server = http.createServer(function (req, res) {
       // to access something from your server
       // If a user is trying to access a resource that doesn't exist ,  404
       // If a user is trying to access a resource that you are not allowed/authorized, 401
-      // If a user is trying to access a resource, and you are allowing it succesfully, 200
+      // If a user is trying to access a resource, and you are allowing it successfully, 200
 
       // res.write(data);
 
@@ -38,3 +38,34 @@ const server = http.createServer(function (req, res) {
 server.listen(PORT, function () {
   console.log(`Server running at port ${PORT}`)
 })
+
+// const fs = require('fs')
+// const http = require('http')
+// const PORT = 4000
+
+// const server = http.createServer(function (req, res) {
+//   if (req.url === '/') {
+//     fs.readFile('index.html', function (error, data) {
+//       if (error) {
+//         console.log(error, 'this was the error')
+//       }
+
+//       // Just making sure that we will read a text
+//       res.writeHead(200, {
+//         'Content-Type': 'text/html'
+//       })
+
+//       // Status Code are the type of codes that you provide when someone is trying
+//       // to access something from your server
+//       // If a user is trying to access a resource that doesn't exist ,  404
+//       // If a user is trying to access a resource that you are not allowed/authorized, 401
+
+//       res.write(data)
+//       return res.end()
+//     })
+//   }
+// })
+
+// server.listen(PORT, function () {
+//   console.log(`Server running at port ${PORT}`)
+// })
