@@ -48,9 +48,18 @@ const http = require('http');
 const PORT = 4000;
 
 const server = http.createServer((request, response) => {
+  response.setHeader('Content-Type', "text/html");
+
     if (request.url=== "/"){
-      response.setHeader('Content-Type', "text/html");
+
       response.write("<h1>Hello, tangina mo bobo! </h1>")
+
+      response.end();
+    }
+
+    if (request.url=== "/user"){
+
+      response.write("<h1>lei lo mei! </h1>")
 
       response.end();
     }
