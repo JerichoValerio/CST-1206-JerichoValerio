@@ -28,7 +28,7 @@ app.post('/students', (req, res) => {
   // 201 is used when you are trying to create a resource and send success response
   return res.status(201).json(student)
 })
- 
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
