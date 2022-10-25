@@ -194,3 +194,16 @@ app.delete("/api/v1/posts/:id", (req,res) => {
 app.listen(PORT, () => {
     console.log(`Server running at port ${PORT}`);
 })
+
+
+// FIND FUNCTION
+
+let numericArray = [5, 3, 4, 23, 11, 2];
+
+const foundValue = numericArray.find((num) => {
+    if (num === 23) {
+        return true;
+    }
+})
+
+console.log(foundValue), "Found Value";
