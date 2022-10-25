@@ -35,7 +35,7 @@ app.post('/students', (request, response) => {
 
   return response.status(201).json(student)
 })
-
+// 201 is used when im trying to create a resource and send success response
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
