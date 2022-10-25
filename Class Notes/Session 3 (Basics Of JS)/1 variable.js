@@ -1,24 +1,20 @@
-
-
-
 // // Var
 
-function sum() {
-  var a;
-  var b;
+function sum () {
+  var a
+  var b
   // var b; // Declaration
-  a = 10;
-  
-  let  c = 10;
-  console.log(c); // Referential error
+  a = 10
 
+  let c = 10
+  console.log(c) // Referential error
 
-  console.log(b, "Value of b");
+  console.log(b, 'Value of b')
 
   if (true) {
-      b = 11; // Assignment/Call
-      let c = 10; // died within the block
-      const d = 20; // died within the block
+    b = 11 // Assignment/Call
+    let c = 10 // died within the block
+    const d = 20 // died within the block
   }
 
   // console.log(a); // 10
@@ -28,20 +24,19 @@ function sum() {
   // c & d are in the temporal dead zone
 }
 
-sum();
+sum()
 
-
-function random() {
-  let a = 5;
-  const d = 5;
+function random () {
+  let a = 5
+  const d = 5
   if (true) {
-      let a = 10;
-      if (true) {
-          console.log(a, "inside");
-      }
+    let a = 10
+    if (true) {
+      console.log(a, 'inside')
+    }
   }
 
-  console.log(a, "Outside")
+  console.log(a, 'Outside')
 }
 
-random();
+random()
