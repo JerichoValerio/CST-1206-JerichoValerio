@@ -6,8 +6,8 @@ function sum () {
   // var b; // Declaration
   a = 10
 
-  let c = 10
-  console.log(c) // Referential error
+  //console.log(c); // Referential error
+  //let  c = 10;
 
   console.log(b, 'Value of b')
 
@@ -19,24 +19,24 @@ function sum () {
 
   // console.log(a); // 10
   // console.log(b); // 11
-  // console.log(c); // Error --> Referential error
+  // console.log(c); // Error --> Referential Error
   // console.log(d); // Error  Referential Error
   // c & d are in the temporal dead zone
 }
 
 sum()
 
-function random () {
-  let a = 5
-  const d = 5
+function random() {
+  let a = 5;
+  const d = 5;
   if (true) {
-    let a = 10
-    if (true) {
-      console.log(a, 'inside')
-    }
+      let a = 10;
+      if (true) {
+          console.log(a, "inside");
+      }
   }
 
-  console.log(a, 'Outside')
+  console.log(a, "Outside")
 }
-
-random()
+// node '.\1 variable.js'
+random();
