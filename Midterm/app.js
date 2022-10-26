@@ -128,4 +128,33 @@ app.post('/employees', (req, res) => {
 })
 //--------------------------------------------------------------
 
+//todo 5th api put update employee for given employeeID
+app.put('/employees/id/:employeeID', (req, res) => {
+  const id = +req.params.employeeID
+  const postToUpdate = req.body
+  if (
+    !postToUpdate.name ||
+    !postToUpdate.email ||
+    !postToUpdate.employeeID ||
+    !postToUpdate.department ||
+    !postToUpdate.Salary
+  ) {
+    return res.status(500).json({
+      message: 'ERROR Please fill out all fields'
+    })
+  }
+  employeeList = employeeList.map(post => {
+    if (post.employeeID == id) {
+      post = postToUpdate
+    }
+
+    return post
+  })
+
+  return res.status(200).json({
+    message: 'Successfully updated Employee ID',
+    data: employeeList
+  })
+})
+//--------------------------------------------------------------
 
