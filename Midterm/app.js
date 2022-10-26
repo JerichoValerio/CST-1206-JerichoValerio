@@ -186,3 +186,27 @@ app.delete('/employees/id/:employeeID', (req, res) => {
 })
 //--------------------------------------------------------------
 
+//todo Challenge api get list of employees for given salary range
+app.get('/employees/salaries/highest', (req, res) => {
+  employeeList.sort((greed, wealth) => {
+    //sort the list of employees by salary in descending order
+
+    return wealth.Salary - greed.Salary
+  })
+
+  return res.status(201).json({
+    //return the list of employees with the highest salary
+
+    message: 'The employee list sorted by how much money they make',
+    data: employeeList
+  })
+})
+//--------------------------------------------------------------
+
+//todo show the server is running in terminal
+app.listen(PORT, () => {
+  console.log(`Server running at port: ${PORT}`)
+})
+//--------------------------------------------------------------
+
+
