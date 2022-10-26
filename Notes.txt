@@ -1,0 +1,6 @@
+npm init -y //Create package.json
+npm i express //package.lock.json + node_modules
+node file.js //refresh server
+localhost:PORT/
+app.post() //append incrementally 
+app.put()// replace

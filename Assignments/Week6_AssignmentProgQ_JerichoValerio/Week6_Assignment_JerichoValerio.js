@@ -24,13 +24,14 @@
 //   Write a function for that takes above array as a parameter and function to calculate the total of
 //   the marks of each student, and returns the student with the highest marks.
 //   Note: If you want you can add values to the objects of these array. YOU HAVE TO USE ES6
-//   FUNCTIONS (HOF’s) only.
+//   FUNCTIONS (HOFs) only.
 //   Your function should look like
 //   function studentWithHighestMarks(array) {
 //   }
 
-const highestMarks = []
-const studentsWithHighestMarks = []
+var highestStu = 0 // highest marks
+var namesStu = '' // student name
+var highestMarks = '' // highest marks
 
 const students = [
   {
@@ -79,43 +80,26 @@ const students = [
   }
 ]
 
-students.forEach(student => {
-  student.subject.forEach(subject => {
-    for (let key in subject) {
-      var index = highestMarks.findIndex(obj => {
-        return obj.subject === key
-      })
-
-      if (index === -1) {
-        highestMarks.push({
-          subject: key,
-          marks: subject[key],
-          students: [student.name]
-        })
-      } else if (highestMarks[index].marks < subject[key]) {
-        highestMarks[index].marks = subject[key]
-        highestMarks[index].students = [student.name]
-      } else if (highestMarks[index].marks == subject[key]) {
-        highestMarks[index].marks = subject[key]
-        highestMarks[index].students.push(student.name)
+function studentWithHighestMarks (array = []) {
+  let output = ''
+  array.filter(students => {
+    let highestMarks = 0
+    let stuName = ''
+    if (students.marks != undefined) {
+      let sumOfArray = students.marks.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue
+      }, 0)
+      if (highestMarks < sumOfArray) {
+        highestMarks = sumOfArray
+        stuName = students.name
+        output = `${stuName} has highest total marks of ${highestMarks}`
       }
     }
   })
-})
+  return output
+}
 
-students.forEach(student => {
-  let count = 0
-  highestMarks.forEach(item => {
-    if (item.students.includes(student.name)) {
-      count++
-    }
-  })
-  if (count >= 2) {
-    studentsWithHighestMarks.push(student.name)
-  }
-})
-
-console.log(studentsWithHighestMarks)
+console.log(studentWithHighestMarks(student))
 
 //************************************************************************************************
 //   Question 2
@@ -129,14 +113,23 @@ console.log(studentsWithHighestMarks)
 //   Function missingNumber(array, n) {
 //   }
 
-const arr = [3, 7, 8, 10, 11, 0, 2, 6, 1, 4, 5]
-const findMissing = (arr = []) => {
-  const sum = arr.reduce((acc, val) => acc + val)
-  const { length: num } = arr
-  const correctSum = (num * (num + 1)) / 2
-  return (diff = correctSum - sum)
-  return diff
+let array1 = [4, 5, 1, 0]
+let array2 = [2, 1, 7, 6, 4, 5, 10, 9]
+function missingNumber (array, n) {
+  let missingNumArr = []
+  if (n === 0) {
+    if (!array.includes(n)) {
+      missingNumArr.push(n)
+    }
+    return missingNumArr
+  }
+  missingNumArr = missingNumber(array, n - 1)
+  if (!array.includes(n)) {
+    missingNumArr.push(n)
+  }
+  return missingNumArr
 }
-console.log(findMissing(arr))
+console.log(missingNumber(array1, Math.max(array1)))
+console.log(missingNumber(array2, Math.max(array2)))
 
 //************************************************************************************************
