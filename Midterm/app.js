@@ -158,3 +158,31 @@ app.put('/employees/id/:employeeID', (req, res) => {
 })
 //--------------------------------------------------------------
 
+//todo 6th api delete employee for given employeeID
+app.delete('/employees/id/:employeeID', (req, res) => {
+  const id = +req.params.employeeID
+  const index = employeeList.findIndex(employee => {
+    if (employee.employeeID == id) {
+      return true
+    }
+  })
+
+  if (index !== -1) {
+    employeeList.splice(index, 1)
+
+    return res.status(200).json({
+      //if employee id exists, delete the employee with that id
+
+      message: 'Successfully deleted the employee',
+      data: employeeList
+    })
+  } else {
+    return res.status(404).json({
+      //if employee id does not exist, return error message
+
+      message: "ERROR Employee Doesn't Exist"
+    })
+  }
+})
+//--------------------------------------------------------------
+
