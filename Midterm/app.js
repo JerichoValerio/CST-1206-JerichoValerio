@@ -1,16 +1,26 @@
 const express = require('express')
 const app = express()
 const PORT = 5000
-const employer = []
+
+//* notes to self 404 error is not found
+//* 200 is ok
+//* 201 is created
+//* 400 is bad request
+//* npm i express
+//* npm install -y
+//* node
+
+//! the employee list that was given
 
 let employeeList = [
   {
     id: 1,
-    name: 'Mike',
-    email: 'mike@company.ca',
+    name: 'Jericho',
+    email: 'jerichovalerio@noogler.ca',
     employeeID: 100,
     department: 'IT',
-    Salary: 100000
+    Salary: 980000
+    //* I tweaked the salary to make it more interesting
   },
   {
     id: 2,
@@ -18,111 +28,49 @@ let employeeList = [
     email: 'daniel@company.ca',
     employeeID: 101,
     department: 'HR',
-    Salary: 50000
-  },
+    Salary: 16
+  }
 ]
 
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send("Welcome to Employee APIs!")
+  //* this is the root route
+
+  res.send("Welcome to Jericho's Employee APIs!")
 })
 
-
-
-//1st api get list employees
-app.get('/employee', (req, res) => {
-  return res.status(200).json(employeeList);
-})
-
-//--------------------------------------------------------------
-
-
-//2nd api get list employees for given department name
-app.get('/employee/:department', (req, res) => {
-  const department = req.params.department;
-  const employee = employeeList.find((employee) => {
-    if (employee.department === department) {
-      return true;
-    }
+//todo 1st api get list employees
+app.get('/employees', (req, res) => {
+  return res.status(200).json({
+    message: 'Successfully fetched the Employee List',
+    data: employeeList
   })
-  return res.status(200).json(employee);
 })
+
 //--------------------------------------------------------------
 
-
-//3rd api get list employees for given employee id
-app.get('/employee/:employeeID', (req, res) => {
-const id = req.params.id;
-const employee = employeeList.find((employee) => {
-if (employee.employeeID === id) {
-return true;
-}
-})
-return res.status(200).json(employee);
-});
-//--------------------------------------------------------------
-
-
-//Creates Employees POST
-  app.post('/employee', (req, res) => {
-    const data = req.body;
-
-    if 
-  })
-//--------------------------------------------------------------
-// app.get('/api/v1/employees/:department', (req, res) => {
-//   const department = req.params.department
-//   const employee2 = employeeList.find(
-//     employee2 => employee2.department === department
-//   )
-//   if (employee2) {
-//     return res.status(200).json({
-//       message: 'Successfully fetched the employee department',
-//       data: employee2
-//     })
-//   } else {
-//     return res.status(404).json({
-//       message: 'Employee not found'
-//     })
-//   }
-// })
-
-
-//3rd api get list employees with employeeID
-
-app.get('/api/v1/employees/:employeeID', (req, res) => {
-  const employeeID = req.params.employeeID
-  const employee3 = employeeList.find(
-    employee3 => employee3.employeeID === employeeID
+//todo 2nd api get list employees for given department
+app.get('/employees/:department', (req, res) => {
+  const departmentID = req.params.department
+  const department = employeeList.filter(
+    employee => employee.department === departmentID
   )
-  if (employee3) {
+
+  //if department exists, return the list of employees
+
+  if (department) {
     return res.status(200).json({
-      message: 'Successfully fetched the employee with employee ID',
-      data: employee2,
-      employee3
+      message: 'Successfully fetched the Employee Department ist',
+      data: department
     })
+
+    //if department does not exist, return error message
   } else {
     return res.status(404).json({
-      message: 'Employee not found'
+      message: "ERROR Department Doesn't Exist"
     })
   }
 })
+//--------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
