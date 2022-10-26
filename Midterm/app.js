@@ -74,3 +74,26 @@ app.get('/employees/:department', (req, res) => {
 })
 //--------------------------------------------------------------
 
+//todo 3rd api get list employees for given employee id
+app.get('/employees/id/:employeeID', (req, res) => {
+  const id = +req.params.employeeID
+  const deathStar = employeeList.filter(employee => employee.employeeID === id)
+
+  //if employee id exists, return the list of employees with that id
+
+  if (deathStar) {
+    return res.status(200).json({
+      message: 'Successfully fetched the Employee ID list',
+      data: deathStar
+    })
+
+    //if employee id does not exist, return error message
+  } else {
+    return res.status(404).json({
+      message: "ERROR Department Doesn't Exist"
+    })
+  }
+})
+
+//--------------------------------------------------------------
+
