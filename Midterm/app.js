@@ -97,3 +97,35 @@ app.get('/employees/id/:employeeID', (req, res) => {
 
 //--------------------------------------------------------------
 
+//todo 4th api post new employee
+app.post('/employees', (req, res) => {
+  const data = req.body
+
+  if (
+    !data.name ||
+    !data.email ||
+    !data.employeeID ||
+    !data.department ||
+    !data.Salary
+  ) {
+    //if any of the fields are missing, return error message
+
+    return res.status(500).json({
+      message: 'ERROR: Please fill out all fields'
+    })
+  }
+
+  data.id = employeeList.length + 1
+
+  employeeList.push(data)
+
+  return res.status(201).json({
+    //if all fields are present, return success message
+
+    message: 'Successfully fetched the Employee details',
+    data: employeeList
+  })
+})
+//--------------------------------------------------------------
+
+
