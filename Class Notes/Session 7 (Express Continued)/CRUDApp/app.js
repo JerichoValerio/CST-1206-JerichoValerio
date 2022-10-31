@@ -31,7 +31,7 @@ let articles = [
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  // Redirecting to new routes
+  //todo Redirecting to new routes
   res.redirect("/api/v1/");
 });
 
@@ -67,9 +67,7 @@ app.get("/api/v1/posts/:postId", (req, res) => {
   // }
 
   // This will fetch the article with the given ID
-  const findArticle = articles.find((article) =>
-    article.id == id ? true : false
-  );
+  const findArticle = articles.find((article) => article.id == id ? true : false);
 
   if (findArticle) {
     return res.status(200).json({
@@ -188,4 +186,4 @@ const foundValue = numericArray.find((num) => {
   }
 });
 
-console.log(foundValue), "Found Value";
+console.log(foundValue, "Found Value");
