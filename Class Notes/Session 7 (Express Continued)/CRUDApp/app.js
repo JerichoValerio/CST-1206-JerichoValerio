@@ -187,3 +187,10 @@ const foundValue = numericArray.find((num) => {
 });
 
 console.log(foundValue, "Found Value");
+
+//---------------------------
+//Splice Function
+//let numA = [1, 2, 3, 4 ,5];
+
+//Array.splice(starting index, number of elements to delete, items you want to add);
+//numA.splice(0, 2);
