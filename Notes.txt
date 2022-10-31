@@ -3,4 +3,5 @@ npm i express //package.lock.json + node_modules
 node file.js //refresh server
 localhost:PORT/
 app.post() //append incrementally 
-app.put()// replace
+app.put() // replace
+npm i ejs // install EJS package
