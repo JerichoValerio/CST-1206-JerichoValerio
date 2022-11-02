@@ -5,25 +5,304 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    .wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+      /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+      /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
+      /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+      background: #F76A43;
+      clip-path: circle(5px at calc(100% - 45px) 45px);
+      transition: all 0.3s ease-in-out;
+    }
+
+    #active:checked~.wrapper {
+      clip-path: circle(75%);
+    }
+
+    .menu-btn {
+      position: absolute;
+      z-index: 12;
+      right: 25px;
+      /* left: 20px; */
+      top: 9px;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+      /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+      /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+      /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
+      background: #F76A43;
+      transition: all 0.3s ease-in-out;
+    }
+
+    #active:checked~.menu-btn {
+      color: #fff;
+    }
+
+    #active:checked~.menu-btn i:before {
+      content: "\f00d";
+    }
+
+    .wrapper ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      list-style: none;
+      text-align: center;
+    }
+
+    .wrapper ul li {
+      margin: 15px 0;
+    }
+
+    .wrapper ul li a {
+      color: none;
+      text-decoration: none;
+      font-size: 30px;
+      font-weight: 500;
+      padding: 5px 30px;
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-family: 'Oswald', sans-serif;
+      color: black;
+      border-radius: 50px;
+      background: #f76a4300;
+      position: relative;
+      line-height: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .wrapper ul li a:after {
+      position: absolute;
+      content: "";
+      background: #fff;
+      background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+      /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+      width: 104%;
+      height: 110%;
+      left: -2%;
+      top: -5%;
+      /* if the font is 'Oswald'*/
+      border-radius: 50px;
+      transform: scaleY(0);
+      z-index: -1;
+      animation: rotate 1.5s linear infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .wrapper ul li a:hover:after {
+      transform: scaleY(1);
+    }
+
+    .wrapper ul li a:hover {
+      color: #000000;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    @keyframes rotate {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    /* --------------------------------------------------------------- */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    ::selection {
+      color: #000;
+      background: #fff;
+    }
+
+    nav {
+      position: fixed;
+      background: #FFFFFF;
+      width: 100%;
+      padding: 10px 0;
+      z-index: 12;
+      color: #000;
+    }
+
+    nav .menu {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      color: #000;
+    }
+
+    .menu .logo a {
+      text-decoration: none;
+      font-size: 35px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    /* --------------------------------------------------------------- */
+
+    .menu ul {
+      display: inline-flex;
+      color: #000;
+    }
+
+    .menu ul li {
+      list-style: none;
+      margin-left: 7px;
+      color: #000;
+    }
+
+    .menu ul li:first-child {
+      margin-left: 0px;
+      color: #000;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .menu ul li a:hover {
+      background: black;
+      color: white;
+    }
+
+    .center {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .center .title {
+      color: #fff;
+      font-size: 55px;
+      font-weight: 600;
+    }
+
+    .center .sub_title {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .center .btns {
+      margin-top: 20px;
+    }
+
+    .center .btns button {
+      height: 55px;
+      width: 170px;
+      border-radius: 5px;
+      border: none;
+      margin: 0 10px;
+      border: 2px solid white;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 0 10px;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .center .btns button:first-child {
+      color: #fff;
+      background: none;
+    }
+
+    .btns button:first-child:hover {
+      background: white;
+      color: black;
+    }
+
+    .center .btns button:last-child {
+      background: white;
+      color: black;
+    }
+
+    a {
+      color: white;
+    }
+
+    body {
+      background-image: url("https://static.politico.com/dd/c9/40098ad948379ff6cd0d64c26d21/ezgif.com-optimize%20(9).gif");
+    }
+  </style>
+  <title>Hotels & Resorts | Booking</title>
 </head>
 
 <body>
-  <!-- <h1>Hi my name is <%- name %> !</h1> -->
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="https://yokoshop.com/">𝖍𝖔𝖙𝖊𝖑 𝕵𝖊𝖗𝖎𝖈𝖍𝖔™ </a>
+      </div>
+      <ul>
+        <li><a href="https://www.facebook.com/profile.php?id=100069762547672&ref=page_internal">"FₐCₑBₒₒₖ"</a></li>
+        <li><a href="https://www.instagram.com/jerichovo/">"ᵢₙₛₜₐGᵣₐₘ"</a></li>
+        <li><a href="https://twitter.com/elonmusk">"ₜWᵢₜₜₑᵣ"</a></li>
+        <li><a href="https://www.youtube.com/@JerichoValerio">"YₒᵤₜᵤBₑ"</a></li>
+        <li><a href="https://www.linkedin.com/in/jericho-t-valerio/">"ₗᵢₙₖₑDᵢₙ"</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">GROW WITH HOTEL"HYPE"</div>
+    <div class="sub_title"></div>
+    <div class="btns">
+      <a href="/register">⁶♛HYPE YOUR EXPERIENCE⁶⁶⁶</a>
+    </div>
+  </div>
+  <!-- --------------------------------------------------------------- -->
 
-
-  <!-- <ul>
-    <% for (let i=0; i < name.length; i++) { %>
-      <li>
-        <%- name[i] %>
-      </li>
-      <% } 
-      %>
-  </ul> -->
-
-  <%= name %>
-
-  <!-- <h1>hello</h1> -->
+  <input type="checkbox" id="active">
+  <label for="active" class="menu-btn">⁶𓅓<i class="fas fa-bars"></i></label>
+  <div class="wrapper">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </div>
 </body>
 
 </html>

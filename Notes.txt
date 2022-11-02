@@ -5,3 +5,22 @@ localhost:PORT/
 app.post() //append incrementally 
 app.put() // replace
 npm i ejs // install EJS package
+npm install --save @sendgrid/mail
+npm install body-parser
+npm install connect-flash
+npm install express-session
+npm install --save firebase-admin
+npm install nodemailer
+npm install nodemailer-sendgrid-transport
+npm install -g nodemon
+npm install nodemailer-sendgrid-transport
+npm install express mo
+npm i bcrypt
+npm install local-storage --save
+npm install mongodb
+npm install mongoose
+npm i morgan
+npm i nodemon
+npm i pug
+npm install --save express-validator
+⁶𓅓⁶𓅓⁶𓅓⁶𓅓⁶𓅓⁶𓅓⁶𓅓⁶ 𓅓 𓆲 𓅔 ⁶𓅓 𓅗 ₆⁶₆ 𓅕 𓅖 ⁶⁶⁶ 𓁹 𓁺 𓁼 𓁻 𓁽 𓁾 ₆₆₆ ☏⁶ ♛ ♕ ♚ ♔ ⁶♛ ⁶♕ ⁶♚ ⁶♔ ⁶☉v☉ ⁶⍥v⍥ ⁶❂v❂ ⁶☫v☫ ⁶0V0 ᵒVᵒ₆⁶₆O̥ͦV̥ͦO̥ͦ
