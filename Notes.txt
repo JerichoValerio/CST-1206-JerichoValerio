@@ -8,12 +8,14 @@ npm i ejs // install EJS package
 npm install --save @sendgrid/mail
 npm install body-parser
 npm install connect-flash
+
 npm install express-session
 npm install --save firebase-admin
 npm install nodemailer
 npm install nodemailer-sendgrid-transport
 npm install -g nodemon
 npm install nodemailer-sendgrid-transport
+
 npm install express mo
 npm i bcrypt
 npm install local-storage --save
